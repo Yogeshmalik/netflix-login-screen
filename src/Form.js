@@ -1,28 +1,33 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function Form() {
 
-    const [errMsg, setErrorMessage] = useState('');
-    const handleError = () => {
-        setErrorMessage("Example error message!")
+    function blurFunction() {
+        document.getElementById("email").style.borderBottom = '2px solid #e87c03';
+        document.getElementById("pass").style.borderBottom = '2px solid #e87c03';
+        document.getElementById("errorMsgEmail").innerHTML = "Please enter a valid email address or phone number.";
+        document.getElementById("errorMsgPass").innerHTML = "Your password must contain between 4 and 60 characters.";
     }
+
+    function focusFunction() {
+        // document.getElementById("myInput").style.background = "#333"
+    }
+
     return (
         <div className='Form'>
             <form>
                 <h1 className='hero'>Sign In</h1>
                 <div className='inputBox error'>
-                    {<input /> == !"" ? <input onError={handleError} type="text" className="inputText error" required /> : <div className='inputBox'><input onError={handleError} type="text" className="inputText error" required /><div className="errorMsg">Please enter a valid email address or phone number.</div></div>}
-                    {/* <input onClick={handleError} type="text" class="inputText error" required /> */}
+                    <input type="text" id='email' class="inputText error" required onFocus={focusFunction} onBlur={blurFunction} />
                     <span className="floating-label">Email or phone number</span>
+                    <span id='errorMsgEmail' onBlur={blurFunction} className="errorMsg"></span>
                 </div>
                 <div className='inputBox error'>
-                    <input onClick={handleError} type="text" className="inputText error" required />
+                    <input id='pass' onFocus={focusFunction} onBlur={blurFunction} type="text" className="inputText error" required />
                     <span className="floating-label">Password</span>
-                    {/* <div class="errorMsg">Your password must contain between 4 and 60 characters.</div> */}
+                    <span id='errorMsgPass' onBlur={blurFunction} className="errorMsg"></span>
                 </div>
-                {/* <input type='email' placeholder='Email or phone number' required /><br />
-                <input type='password' placeholder='Password' required /><br /> */}
-                <button>Sign In</button><br />
+                <button type="submit">Sign In</button><br />
                 <div className='remem-help'>
                     <label className='remember'>
                         <input type='checkbox' />
