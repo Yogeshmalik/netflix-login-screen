@@ -9,7 +9,6 @@ body {
     linear-gradient(rgba(0, 0, 0, 0.45),
       rgba(0, 0, 0, 0.7)),
     url("https://assets.nflxext.com/ffe/siteui/vlv3/afc06103-4d6a-4236-b496-34b671a7e9ba/383fc36a-aa04-4dfd-95a0-a4b71bc21eed/IN-en-20221003-popsignuptwoweeks-perspective_alpha_website_large.jpg");
-  /* max-width: 100vw; */
   margin: 0;
 }
 
@@ -64,15 +63,21 @@ form {
   color: white;
   text-align: left;
 }
-.errorMsg{
+/* .error {
+  border-bottom: 2px solid #e87c03;
+  position: relative;
+} */
+
+.errorMsg {
   color: #e87c03;
 }
-.inputBox{
+
+.inputBox {
   position: relative;
 }
 
-input:focus ~ .floating-label,
-input:not(:focus):valid ~ .floating-label{
+input:focus~.floating-label,
+input:not(:focus):valid~.floating-label {
   top: 14px;
   bottom: 10px;
   left: 20px;
@@ -96,9 +101,6 @@ input:not(:focus):valid ~ .floating-label{
   border: none;
 }
 
-
-
-
 input[type='text'],
 input[type='password'],
 input[type='email'],
@@ -118,17 +120,15 @@ input {
   font-weight: 500;
   padding: 16px 20px 0;
 }
- .error{
-  border-bottom: 2px solid #e87c03;
-  position: relative;
-}
+
+
 button {
   background: #e50914;
   color: white;
   font-weight: bold;
   margin-top: 10%;
   margin-bottom: -3px;
-  padding: 1.02em 1.2rem ;
+  padding: 1.02em 1.2rem;
   line-height: 0px;
 }
 
